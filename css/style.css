@@ -1,130 +1,145 @@
-  html, body, h2, h4 {font-family: 'Roboto Condensed', sans-serif;}
-
-
-
-    h1{text-align: center;}
-
-
-    a {color: black;}
-
-    a:hover {color: red;
+ html,
+  body,
+  h2,
+  h4,
+  h5 {
+      font-family: 'Roboto Condensed', sans-serif;
+  }
+  h1 {
+      text-align: center;
+  }
+  a {
+      color: black;
+  }
+  a:hover {
+      color: red;
       text-decoration: none;
-    }
+  }
+  /*Sidebar*/
 
-/*Sidebar*/
-
-#sidebar {
-  z-index: 1;
-  position: absolute;
-  width: 0;
-  height: 100%;
-  overflow-y: hidden;
-  background: black;
-  float: left;
-
-}
- #sidebar h1 {
+  #sidebar {
+      z-index: 1;
+      position: absolute;
+      width: 0;
+      height: 100%;
+      overflow-y: hidden;
+      background: black;
+      float: left;
+  }
+  #sidebar h1 {
       color: #ac00e6;
       text-align: left;
       margin-left: 20px;
-    }
- #schools ul {padding:0
-  ; list-style: none;}
-
-
-    #schools li {
-    color: white;
-    text-indent: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #0d0d0d;
-    cursor: pointer;
-    font-size: 22px;
-    }
-
-    #schools li:nth-child(1){
+  }
+  #schools ul {
+      padding: 0;
+      list-style: none;
+  }
+  #schools li {
+      color: white;
+      text-indent: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #0d0d0d;
+      cursor: pointer;
+      font-size: 22px;
+  }
+  #schools li:nth-child(1) {
       margin-top: 20px;
-    }
-
-
-    #schools li:hover {
+  }
+  #schools li:hover {
       background-color: red;
       color: white;
-    }
+  }
+  #searchBox {
+      width: 85%;
+      margin-left: 20px;
+      padding: 5px;
+      font-size: 20px;
+      border-color: red;
+  }
+  /*main page*/
 
-    #searchBox {width: 85%; margin-left: 20px; padding: 5px; font-size: 20px; border-color: red;}
+  .fail-google{
+    z-index: 1000;
+    font-size: 40px;
+    color: red;
+    display: inline-block;
+  }
 
-/*main page*/
-#page-wrapper {
-  width: 100%;
-  padding: 0;
-}
+  #page-wrapper {
+      width: 100%;
+      padding: 0;
+  }
+  #map {
+      width: 95%;
+      height: 85%;
+      position: absolute;
+      margin-top: 70px;
+      margin-left: 20px;
+  }
 
-#map { width: 95%; height: 85%;  position: absolute; margin-top: 70px; margin-left: 20px;}
+  #mapError {
+    z-index: 1000;
+  }
+  .glyphicon {
+      float: left;
+      margin-top: 15px;
+      color: black;
+      font-size: 30px;
+  }
+  .glyphicon:hover {
+      color: red;
+  }
+  #title {
+      color: #737373;
+  }
+  #title h1 {
+      text-align: right;
+  }
+  .via {
+      color: purple;
+  }
+  #github {
+      color: red;
+      float: left;
+      margin-top: 15px;
+      font-size: 30px;
+      padding-left: 15px;
+  }
+  #github:hover {
+      color: #ac00e6;
+  }
+  /*Infowindow*/
 
+  .info {
+      text-align: center;
+  }
+  h2 {
+      color: red;
+  }
+  h2:hover {
+      color: purple;
+  }
+  p {
+      font-size: 15px;
+  }
+  h4 {
+      color: black;
+  }
+  h5 {font-size: 40px; color: red;}
+  /*Collaspible function*/
 
-.glyphicon {
-  float: left;
-
-  margin-top: 15px;
-  color: black;
-font-size: 30px;
-}
-
-.glyphicon:hover {
-  color: red;
-
-}
-
-#title {
-  color: #737373;
-}
-
-#title h1 {text-align: right; }
-
-
-.via {color: purple;}
-
-#github {
-  color: red;
-  float: left;
-  margin-top: 15px;
-  font-size: 30px;
-padding-left: 15px;
-}
-
-#github:hover {
-  color: #ac00e6;
-}
-
-
-/*Infowindow*/
-.info {text-align: center;}
-
-h2 {color: red;}
-h2:hover {color: purple;}
-p { font-size: 15px;}
-h4 { color: black;}
-
-
-/*Collaspible function*/
-
-#wrapper.menuDisplayed #sidebar {
-  width: 25%;
-}
-
-#wrapper.menuDisplayed #page-wrapper{
-  padding-left: 25%;
-}
-
-#wrapper.menuDisplayed #map {
-  width: 71%;
-  margin-left: 15px;
-}
-
-#wrapper.menuDisplayed #title h1 {
-  text-align: right;
-
-}
-
-
+  #wrapper.menuDisplayed #sidebar {
+      width: 25%;
+  }
+  #wrapper.menuDisplayed #page-wrapper {
+      padding-left: 25%;
+  }
+  #wrapper.menuDisplayed #map {
+      width: 71%;
+      margin-left: 15px;
+  }
+  #wrapper.menuDisplayed #title h1 {
+      text-align: right;
+  }
