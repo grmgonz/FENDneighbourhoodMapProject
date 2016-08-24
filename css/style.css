@@ -79,9 +79,6 @@
       margin-left: 20px;
   }
 
-  #mapError {
-    z-index: 1000;
-  }
   .glyphicon {
       float: left;
       margin-top: 15px;
@@ -115,6 +112,7 @@
   .info {
       text-align: center;
   }
+
   h2 {
       color: red;
   }
