@@ -15,7 +15,7 @@
   crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <style>
-#map,#sidebar{position:absolute}#map,#searchBox,#sidebar h1{margin-left:20px}.fail,.via,h1,h2,h4,h5,p{text-align:center}body,h2,h4,h5,html{font-family:"Roboto Condensed",sans-serif}a{color:#000}a:hover{color:red;text-decoration:none}#sidebar{z-index:1;width:0;height:100%;overflow-y:hidden;background:#000;float:left}#sidebar h1{color:#ac00e6;text-align:left}#schools ul{padding:0;list-style:none}#schools li{color:#fff;text-indent:20px;padding-top:10px;padding-bottom:10px;border-bottom:1px solid #0d0d0d;cursor:pointer;font-size:22px}#schools li:nth-child(1){margin-top:20px}#schools li:hover{background-color:red;color:#fff}#searchBox{width:85%;padding:5px;font-size:20px;border-color:red}.fail{margin-top:200px;z-index:1000;font-size:50px;color:red}#github,.glyphicon{float:left;margin-top:15px;line-height:30px;font-size:30px}#page-wrapper{width:100%;padding:0}#map{width:95%;height:85%;margin-top:70px}.glyphicon{color:#000}#github,.glyphicon:hover,h2{color:red}#title{color:#737373}#title h1{text-align:right}#github{padding-left:15px}#github:hover{color:#ac00e6}p{font-size:15px;width:300px;padding:5px}.via{color:purple}.via:hover,h5{color:red}h4{color:#000}h5{font-size:40px}#wrapper.menuDisplayed #sidebar{width:25%}#wrapper.menuDisplayed #page-wrapper{padding-left:25%}#wrapper.menuDisplayed #map{width:71%;margin-left:15px}#wrapper.menuDisplayed #title h1{text-align:right}@media only screen and (max-width:400px){h2,h5,p{width:200px;padding:5px}h2{font-size:20px}h4,p{font-size:15px}h5{font-size:30px}}
+#map,#sidebar{position:absolute}#map,#searchBox,#sidebar h1{margin-left:20px}.fail,.via,h1,h2,h4,h5,p{text-align:center}body,h2,h4,h5,html{font-family:"Roboto Condensed",sans-serif}a{color:#000}a:hover{color:red;text-decoration:none}#sidebar{z-index:1;width:0;height:100%;overflow-y:hidden;background:#000;float:left}#sidebar h1{color:#ac00e6;text-align:left}#schools ul{padding:0;list-style:none}#schools li{color:#fff;text-indent:20px;padding-top:10px;padding-bottom:10px;border-bottom:1px solid #0d0d0d;cursor:pointer;font-size:22px}#schools li:nth-child(1){margin-top:20px}#schools li:hover{background-color:red;color:#fff}#searchBox{width:85%;padding:5px;font-size:20px;border-color:red}.fail{margin-top:200px;z-index:1000;font-size:50px;color:red}#github,.glyphicon{float:left;margin-top:15px;font-size:30px}#page-wrapper{width:100%;padding:0}#map{width:95%;height:85%;margin-top:70px}.glyphicon{color:#000}#github,.glyphicon:hover,h2{color:red}#title{color:#737373}#title h1{text-align:right}#github{padding-left:15px}#github:hover{color:#ac00e6}p{font-size:15px;width:300px;padding:5px}.via{color:purple}.via:hover,h5{color:red}h4{color:#000}h5{font-size:40px}#wrapper.menuDisplayed #sidebar{width:25%}#wrapper.menuDisplayed #page-wrapper{padding-left:25%}#wrapper.menuDisplayed #map{width:71%;margin-left:15px}#wrapper.menuDisplayed #title h1{text-align:right}@media only screen and (max-width:400px){h2,h5,p{width:200px;padding:5px}h2{font-size:20px}h4,p{font-size:15px}h5{font-size:30px}}
 </style>
 </head>
 <body>
@@ -37,14 +37,18 @@
       <div id="row">
         <div class="container-fluid">
           <nav>
-
-          <div class="col-md-12" id="title">
+            <div class="clearfix visible-xs-block"></div>
+          <div class=" col-xs-2 col-sm-2 col-md-2">
             <a href="#" id="menu-toggle"> <span class="glyphicon glyphicon-menu-hamburger"></span> </a>
             <a href="https://github.com/grmgonz" target="_blank"><i class="fa fa-github" id="github" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-xs-10 col-sm-10 col-md-10" id="title">
             <h1> Neighbourhood Map Project by <a href="http://gabegonzales.co/" target="_blank">Gabe Gonzales</a></h1> </div>
            </nav>
            <main>
-          <div id="map" class="col-md-12"> </div>
+          <div id="map" class="col-xs-12 col-sm-12 col-md-12"> </div>
         </main>
         </div>
       </div>
