@@ -8,40 +8,40 @@ var infowindow;
 var schools = [
 
     {
-        name: "University of Toronto",
+        name: 'University of Toronto',
         latitude: 43.662891,
         longitude: -79.395651,
-        website: "https://www.utoronto.ca/"
+        website: 'https://www.utoronto.ca/'
     }, {
-        name: "Wilfred Laurier University",
+        name: 'Wilfred Laurier University',
         latitude: 43.648409,
         longitude: -79.383386,
-        website: "https://www.wlu.ca/"
+        website: 'https://www.wlu.ca/'
     }, {
-        name: "Ryerson University",
+        name: 'Ryerson University',
         latitude: 43.657657,
         longitude: -79.378805,
-        website: "http://www.ryerson.ca/index.html"
+        website: 'http://www.ryerson.ca/index.html'
     }, {
-        name: "OCAD University",
+        name: 'OCAD University',
         latitude: 43.651996,
         longitude: -79.389098,
-        website: "http://www.ocadu.ca/"
+        website: 'http://www.ocadu.ca/'
     }, {
-        name: "George Brown College",
+        name: 'George Brown College',
         latitude: 43.650952,
         longitude: -79.370225,
-        website: "http://www.georgebrown.ca/"
+        website: 'http://www.georgebrown.ca/'
     }, {
-        name: "Centennial College",
+        name: 'Centennial College',
         latitude: 43.653229,
         longitude: -79.383185,
-        website: "http://www.centennialcollege.ca/"
+        website: 'http://www.centennialcollege.ca/'
     }, {
         name: 'Lighthouse Labs',
         latitude: 43.644645,
         longitude: -79.394973,
-        website: "https://www.lighthouselabs.ca/"
+        website: 'https://www.lighthouselabs.ca/'
     }
 
 ];
@@ -49,6 +49,7 @@ var schools = [
 //VIEW
 // Function to initialize the Google Map
 function initMap(initialize) {
+    'use strict';
 
     //Adding my own style to the map
     var styles = [{
@@ -63,8 +64,7 @@ function initMap(initialize) {
 
     //Set infowinow content
     infowindow = new google.maps.InfoWindow({
-        content: "<div style = 'width:400px;min-height:150px'>" +
-            '<div class="info"></div>'
+        content: "<div style = 'width:300px;min-height:150px'>"
     });
     //Load Map
     map = new google.maps.Map(document.getElementById('map'), {
@@ -129,9 +129,12 @@ function initMap(initialize) {
 
     }
 
+//Initiate Knockout (The View Model part of the project)
 
+ko.applyBindings(ViewModel);
 
 }
+
 
 
 //Function for marker animation
@@ -142,9 +145,20 @@ function toggleBounce(marker) {
         marker.setAnimation(google.maps.Animation.BOUNCE);
         window.setTimeout(function() {
             marker.setAnimation(null);
-        }, 800);
+        }, 1400);
     }
 }
+
+
+//Added error for loading Google Maps
+function googleError() {
+    if (typeof $ == "undefined") {
+        $("#map").html("Fail to load Google maps");
+    } else {
+        document.getElementById("map").innerHTML = '<div class="fail">!Sorry, failed to load Google maps...!</div>';
+    }
+}
+
 
 
 
@@ -190,30 +204,32 @@ var ViewModel = {
             url: wikiUrl,
             dataType: "jsonp"
         }).done(function(data) {
+             if (infowindow.marker != marker) {
+                infowindow.marker = marker;
 
-            //Setting variables for infowindow content in a list
-            var info = $(".info");
-            info.html("");
-            var website = "View School's Website Here";
-            var infowindowContent = '<div class ="displayContent">';
+                var website = "View School's Website Here";
+
 
             for (var i = 0; i < 1; i++) {
                 if (data[1][i]) {
-                    infowindowContent += '<a href="' + data[3][i] +
-                        '" target="_blank"><h2>' + data[1][i] +
-                        '</h2></a><p>' + data[2][i] + '</p>' +
-                        '<p class="via">Info via Wikipedia</p>' + '<h4>' +
+                    var wikiContent = '<div>' + '<h2>' + marker.title + '</h2>' + '<p>' + data[2][i] + '</p>' +
+                        '<a href="' + data[3][1] + '"target="_blank"><p class="via">Info via Wikipedia</p></a>' + '<h4>' +
                         '<a href=" ' +
                         marker.content + '" target="_blank">' + website + '</a>' +
-                        '</h4>';
-                }
+                        '</h4>' + '</div>';
+                        infowindow.setContent(wikiContent);
+
+                } else {
+                    // Error handling if no Wiki info is found
+                    var errorWiki = '<div>' + '<h5>' + "Sorry, we could not find Wikipedia information about this school." + '</h5>' + '</div>';
+                      infowindow.setContent(errorWiki);
+                  }
             }
-            infowindowContent += '</div>';
-            info.html(infowindowContent);
+        }
 
         }).fail(function() {
-            $(".info").html('<h5>' +
-                "OOPS, content from Wikipedia has failed to load" + '</h5>');
+            var fail = '<div>' + '<h5>' + "OOPS, content from Wikipedia has failed to load" + '</h5>' + '</div>';
+            infowindow.setContent(fail);
         });
 
     },
@@ -239,14 +255,14 @@ var ViewModel = {
 
         //Remove markers from view
         for (var r = 0; r < marker.length; r++) {
-            marker[r].setMap(null);
+            marker[r].setVisible(false);
         }
         //Push schools that are being searched and add markers back to map accordingly
         for (var p in schools) {
             if (schools[p].name.toLowerCase().indexOf(value.toLowerCase()) >=
                 0) {
                 ViewModel.allSchools.push(schools[p]);
-                marker[p].setMap(map);
+                marker[p].setVisible(true);
 
             }
         }
@@ -259,10 +275,5 @@ var ViewModel = {
 
 
 
-//Initiate Knockout (The View Model part of the project)
-
-ko.applyBindings(ViewModel);
 //Special binding for search function
 ViewModel.filtering.subscribe(ViewModel.search);
-
-
