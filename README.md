@@ -5,7 +5,7 @@ FEND Project 5: Neighbourhood Map Project
 ---------------
 * To run open index.html in Github repository: https://github.com/grmgonz/FENDneighbourhoodMapProject
 * You can also clone repository to your local machine or download zip file.
-* Lastly for a live view Visit: https://grmgonz.github.io/FENDneighbourhoodMapProject/ or
+* Lastly for a live view Visit: https://grmgonz.github.io/FENDneighbourhoodMapProject/ 
 
 
 2: Credits
