@@ -78,7 +78,79 @@ a:hover {
 }
 
 
+
+/*nav bar*/
+nav {
+    width: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfff4+0,dfe5d7+40,b3bead+100;Wax+3D+%233 */
+    background: #fcfff4; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+
+
+.glyphicon {
+    float: left;
+    margin-top: 15px;
+    color: black;
+    font-size: 35px;
+    line-height: 30px;
+    margin-left: 15px;
+}
+
+
+.glyphicon:hover {
+    color: red;
+}
+
+
+#title {
+    color: #000000;
+}
+
+
+#title h1 {
+    text-align: right;
+}
+
+
+#title a {
+    color: red;
+}
+
+
+#title a:hover{
+    color: purple;
+}
+
+
+#github {
+    color: red;
+    float: left;
+    margin-top: 15px;
+    font-size: 35px;
+    padding-left: 15px;
+}
+
+
+#github:hover {
+    color: #ac00e6;
+}
+}
+
+
 /*main page*/
+#wrapper{
+    padding: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+
 .fail {
     margin-top: 200px;
     z-index: 1000;
@@ -95,49 +167,10 @@ a:hover {
 
 
 #map {
-    width: 95%;
-    height: 85%;
+    width: 100;
+    height: 90%;
     position: absolute;
-    margin-top: 70px;
-    margin-left: 20px;
-}
 
-
-.glyphicon {
-    float: left;
-    margin-top: 15px;
-    color: black;
-    font-size: 30px;
-    line-height: 30px;
-}
-
-
-.glyphicon:hover {
-    color: red;
-}
-
-
-#title {
-    color: #737373;
-}
-
-
-#title h1 {
-    text-align: right;
-}
-
-
-#github {
-    color: red;
-    float: left;
-    margin-top: 15px;
-    font-size: 30px;
-    padding-left: 15px;
-}
-
-
-#github:hover {
-    color: #ac00e6;
 }
 
 
@@ -192,8 +225,8 @@ h5 {
 
 
 #wrapper.menuDisplayed #map {
-    width: 71%;
-    margin-left: 15px;
+    width: 75%;
+    height: 100%;
 }
 
 
@@ -201,31 +234,7 @@ h5 {
     text-align: right;
 }
 
-/*Responsiveness for infow window content*/
-@media only screen and (max-width: 400px) {
-
-h2 {
-    font-size: 20px;
-    width:200px;
-    padding: 5px;
-}
 
 
-p {
-    font-size: 15px;
-    width:200px;
-    padding: 5px;
-}
 
 
-h4 {
-    font-size: 15px;
-}
-
-h5 {
-    font-size: 30px;
-    width: 200px;
-    padding: 5px;
-
-}
-}

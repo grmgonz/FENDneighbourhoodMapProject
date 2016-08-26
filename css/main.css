@@ -1,0 +1,106 @@
+/*Responsiveness for infow window content*/
+@media only screen and (max-width: 400px) {
+
+h2 {
+    font-size: 20px;
+    width:200px;
+    padding: 5px;
+}
+
+
+p {
+    font-size: 15px;
+    width:200px;
+    padding: 5px;
+}
+
+
+h4 {
+    font-size: 15px;
+}
+
+h5 {
+    font-size: 30px;
+    width: 200px;
+    padding: 5px;
+
+}
+}
+
+
+
+/*Responsiveness for header*/
+@media only screen and (max-width: 900px) {
+
+
+#title h1 {
+    font-size: 28px;
+}
+}
+
+/*Responsiveness for header*/
+@media only screen and (max-width: 690px) {
+
+
+#title h1 {
+    font-size: 20px;
+}
+
+
+#sidebar h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+
+#schools li {
+    font-size: 16px;
+    text-indent: 0px;
+    margin-left: 5px;
+}
+
+
+#searchBox {
+    margin-left: 5px;
+    width: 95%;
+}
+
+
+#wrapper.menuDisplayed #sidebar {
+    width: 35%;
+}
+
+
+#wrapper.menuDisplayed #page-wrapper {
+    padding-left: 35%;
+}
+
+
+#wrapper.menuDisplayed #map {
+    width: 65%;
+}
+}
+
+
+/*Responsiveness for header*/
+@media only screen and (max-width: 950px) {
+#sidebar h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+
+#schools li {
+    font-size: 18px;
+    text-indent: 0px;
+    margin-left: 5px;
+}
+
+
+#searchBox {
+    width: 95%;
+    margin-left: 5px;
+}
+}
